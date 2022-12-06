@@ -58,19 +58,33 @@ Variable-length raw binary data.  </td>
      - `SELECT MAX(Salary) FROM Employee WHERE employee_age < 20`
      - `Select MEDIAN(Salary) from Employee where section = 'Junior'`
      - `SELECT SUM(Salary) AS "SUM Salary" FROM Employee WHERE Salary > 10000`
- - Group, Order,Having :
+ - Group, Order,Having, Like :
      - `SELECT age FROM Employee WHERE  Salary > 10000  GROUP BY Salary`
      - `SELECT Emp_name, Salary FROM Employee WHERE Salary > 10000  ORDER BY id ASC`
      - `SELECT Salary FROM Employee GROUP BY Salary HAVING Salary > 10000`
- - Trigger :
-     - Enable -
-     - Disable -
-     - Drop -
-     - After -
-     - Before -
+     - `Select * from Employee where Emp_name Like "%st%"`
+     - `SELECT DISTINCT emp_name, Salary FROM Employee  WHERE student_id >= 2`
+ - Trigger:Enable,Disable,After,Before : All code are same Just change the Syntax
+      ```
+        CREATE OR REPLACE TRIGGER  "Employee_T"   
+        AFTER INSERT or UPDATE or DELETE    #change based on After or before 
+        ON "Employee"   
+        FOR EACH ROW
+        BEGIN  
+        WHEN the person performs insert/update/delete operations into the table.  
+        END;  
+        /  
+        ALTER TRIGGER  "STUDENTS_T" ENABLE  ## change based on enable or disable 
+        /
+        ```
+ - Join(Several Types):
+     - Inner : `SELECT students.student_id, students.student_name,teachers.teacher_id FROM students INNER JOIN teachers ON students.student_name=teachers.teacher_name`
+     - Outer :`SELECT students.student_id,students.student_name, teachers.teacher_id FROM students LEFT JOIN teachers ON students.student_name = teachers.teacher_name`
+     - Equi : `SELECT students.student_id, students.student_name, teachers.teacher_id  FROM students, teachers  WHERE students.student_name = teachers.teacher_name`
+     - Self : `SELECT A.student_id, A.student_name, B.student_age  FROM students A, students B WHERE A.student_age = B.student_age;`
+     - Cross or Cartesian: `SELECT * FROM students CROSS JOIN teachers;`
+     - Semi:`SELECT students.student_id, students.student_name FROM students WHERE EXISTS (SELECT 25 FROM teachers WHERE teachers.teacher_age = students.student_age);`
   
-  
-  
-  
-  
-  
+
+#### About Join
+![image](https://user-images.githubusercontent.com/50872508/205989940-fa9b497c-a692-45e0-9b30-bcc81f930f53.png)
