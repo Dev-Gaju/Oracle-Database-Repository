@@ -88,3 +88,6 @@ Variable-length raw binary data.  </td>
 
 #### About Join
 ![image](https://user-images.githubusercontent.com/50872508/205989940-fa9b497c-a692-45e0-9b30-bcc81f930f53.png)
+
+![image](https://github.com/Dev-Gaju/Oracle-Database-Repository/assets/50872508/6eaf2cdc-8cf8-420f-bcc8-bb6a83c098a5)
+
