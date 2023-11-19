@@ -91,3 +91,6 @@ Variable-length raw binary data.  </td>
 
 ![image](https://github.com/Dev-Gaju/Oracle-Database-Repository/assets/50872508/6eaf2cdc-8cf8-420f-bcc8-bb6a83c098a5)
 
+![image](https://github.com/Dev-Gaju/Oracle-Database-Repository/assets/50872508/42cdadb4-abc0-4351-85c6-d95e67a1d090)
+
+
